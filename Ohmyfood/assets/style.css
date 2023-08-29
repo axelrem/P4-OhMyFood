@@ -1,0 +1,9 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --main-color: #9356dc;
+    --secondary-color: #FF79DA;
+    --third-color: #99e2d0;
+}
