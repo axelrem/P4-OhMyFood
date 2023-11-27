@@ -57,9 +57,6 @@
     .container-title {
         height: 68px;
         width: 100%;
-        .title-intro {
-    
-        }
     }
     .txt-intro {
         padding-bottom: 27px;
@@ -76,6 +73,7 @@
         font-size: 16px;
         font-weight: 500;
         transition: 0.4s;
+
         &:hover {
             cursor: pointer;
             background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%),
@@ -92,14 +90,6 @@
     padding-left: 20px;
     padding-top: 48px;
     padding-right: 20px;
-}
-
-.container-gestion {
-    
-}
-
-.container-button {
-    
 }
 
 .button-gestion {
@@ -143,10 +133,6 @@
     padding-bottom: 66px;
     padding-right: 18px;
     gap: 25px;
-}
-
-.container-restaurant {
-
 }
 
 .new-restaurant {
@@ -207,21 +193,32 @@
     padding-right: 50px;
     position: relative;
 
+    
     i {
         cursor: pointer;
         position: absolute;
+        font-size: 24px;
+        
         &.line-heart {
             opacity: 1;
-            transition: opacity 0.3s;
             &:hover {
                 opacity: 0;
             }
         }
+
         &.fill-heart {
             opacity: 0;
+            transition: 0.3s ease-in-out;
+
+            &.fa-heart:before {
+                background: linear-gradient(175deg, #9356DC 0%, #FF79DA 100%);
+                -webkit-background-clip: text;  
+                -webkit-text-fill-color: transparent;
+            }
             &:hover {
                 opacity: 1;
-                background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+                transform: scale(1.1);
+                transition: 0.3s ease-in-out;
             }
             
         }
@@ -271,6 +268,11 @@ li {
 /* Responsive */
 
 @media screen and (min-width: 1024px) {
+
+.title-intro {
+    font-size: 40px;
+}
+
 .logo-header {  
     height: 90px;
 }
@@ -278,8 +280,9 @@ li {
 
 .section-gestion {
     height: 228px;
-    padding-left: 20px;
+    padding-left: 180px;
     padding-top: 48px;
+    padding-right: 207px;
 }
 
 .container-button {
@@ -290,7 +293,8 @@ li {
 }
 
 .section-restaurant {
-   
+   padding-left: 180px;
+   padding-right: 180px;
 }
 
 .container-restaurant {
@@ -298,11 +302,13 @@ li {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 100px;
+    gap: 50px;
 }
 
 .card-restaurant {
-    width: 40%;
+    width: 30vw;
+    height: 100%;
+    margin-right: 50px;
 }
 
 .logo-footer {
@@ -313,11 +319,30 @@ li {
 
 .list-footer {
     list-style-type: none;
-    margin: 0;
     padding: 0 0 22px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 7px;
+    gap: 30px;
 }
+
+.menu-restaurant {
+    margin-left: 193px;
+    margin-right: 192px;
+}
+
+.container-title-page {
+    justify-content: center;
+}
+.section-menu {
+    padding-left: 200px;
+    padding-right: 200px;
+    
+}
+.txt-footer {
+    position: relative;
+    top: 45px;
+    right: 25px;
+}
+
 }

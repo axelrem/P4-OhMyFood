@@ -1,4 +1,5 @@
 @import './variables.scss';
+@import './mixins.scss';
 
 .arrow-return {
     position: absolute;
@@ -23,7 +24,7 @@
     z-index: 1;
 .container-title-page {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 24px;
     .title-page {
         font-family: $secondary-font;
@@ -36,6 +37,7 @@
 }
     .section-menu {
         @include open-menu;
+        padding-bottom: 40px;
     }
     .epd-menu {
         font-weight: 300;
@@ -46,66 +48,108 @@
         padding-bottom: 9px;
     }
         .card-menu-restaurant {
+            position: relative;
             background-color: $txt-footer-color;
             margin-bottom: 10px;
             border-radius: 15px;
             box-shadow: 0px 4.011494159698486px 15.043103218078613px 0px #0000001A;
             height: 69px;
             width: 95%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 15px;
+            padding: 12px 0 12px 15px;
             box-sizing: border-box;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            transition: padding-right 0.5s ease-in-out;
+            
             &:hover {
+                cursor: pointer;
+                padding-right: 59px;
+                .txt-card-menu {
+                    text-overflow: ellipsis;
+                }
                 .check-button {
-                    display: block;
+                    right: 0;
+                    margin-left: 15px;
                 }
+
             }
-            .txt-card-menu {
+            .card-info-container {
                 display: flex;
-                flex-direction: column;
-                
-                .title-card-menu {
-                    font-weight: 500;
-                    font-size: 18px;    
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                .txt-card-menu {
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 100%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    gap: 5px;
+                    
+                    span {
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        min-width: 0;
+                        flex-shrink: 1;
+                    }
+                    
+                    .title-card-menu {
+                        font-weight: 500;
+                        font-size: 18px;    
+                        text-overflow: ellipsis;
+                    }
+                    
+                    .subtitle-card-menu {
+                        font-weight: 300;
+                        font-size: 15px;
+                    }
                 }
-                .subtitle-card-menu {
-                    font-weight: 300;
+                
+                .price-menu {
+                    font-weight: 700;
                     font-size: 15px;
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    width: fit-content;
+                    padding-right: 15px;
                 }
             }
 
-            .price-menu {
-                font-weight: 700;
-                font-size: 15px;
-            }
 
             .check-button {
+                display: flex;
                 height: 69px;
                 width: 59px;
                 background-color: $third-color;
                 border-radius: 0 15px 15px 0;
+                justify-content: center;
+                align-items: center;
                 position: absolute;
-                left: 270px;
-                display: none;
-                transition: all 1s ease;
-                & .fa-circle-check {
+                top: 0;
+                right: -59px;
+                transition: right 0.5s ease-in-out;
+
+                .fa-circle-check {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     color: white;
                     font-size: 20px;
+                    text-align: center;
+                    position: relative;
                 }
             }
-        }
+        } 
     }
 
 .container-button-command {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 40px;
     padding-bottom: 40px;
         .button-explore {
         width: 218px;
