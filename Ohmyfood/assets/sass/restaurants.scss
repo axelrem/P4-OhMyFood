@@ -22,23 +22,26 @@
     padding-left: 13px;
     position: relative;
     z-index: 1;
-.container-title-page {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    .title-page {
-        font-family: $secondary-font;
-        font-size: 28px;
-        font-weight: 400;
-        font-style: italic;
-        padding-bottom: 42px;
-        padding-top: 31px;
+
+    .container-title-page {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        .title-page {
+            font-family: $secondary-font;
+            font-size: 28px;
+            font-weight: 400;
+            font-style: italic;
+            padding-bottom: 42px;
+            padding-top: 31px;
+        }
     }
-}
+
     .section-menu {
         @include open-menu;
         padding-bottom: 40px;
     }
+    
     .epd-menu {
         font-weight: 300;
         font-size: 16px;
